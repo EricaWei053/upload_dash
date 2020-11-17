@@ -79,19 +79,7 @@ def plot():
         ], className='row'),
 
     ])
-
-    """
-    app.layout = html.Div(children=[
-        html.H1(children='Hello Signal Dash'),
-        html.Div(children='''
-            Dash template code. 
-        '''),
-
-        dcc.Graph(
-            id='example-graph',
-            figure=fig
-        )]
-    )"""
+    
 
 if __name__ == '__main__':
     plot()
