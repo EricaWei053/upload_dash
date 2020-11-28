@@ -1,6 +1,6 @@
 
 
-## How to upload your code? 
+## How to upload my code? 
 
 Use git worklflow to create a Pull Request to this folder. 
 
@@ -30,11 +30,11 @@ Add your dash code file to /users folder, make sure your file name is different 
 Then, 
 ```
 git add .
-git commit -m "Upload dash code file"
+git commit -m "Upload my dash code."
 ```
 
 Step 5:
 Push back the repository, 
 ```
-git push -u origin upload-file
+git push origin master upload-file
 ``` 

@@ -1,23 +1,24 @@
 import flask
 import plotly.express as px
 import pandas as pd
+import dash_bootstrap_components as dbc
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
 import plotly.express as px
 import pandas as pd
 
-external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-server = flask.Flask(__name__)
-app = dash.Dash(__name__, server=server, external_stylesheets=external_stylesheets)
 
-@server.route('/plot')
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+app.layout = html.Div()
+
+
 def plot():
-    path1 = "./STRG1.csv"
+    path1 = "./data/STRG1.csv"
     df1 = pd.read_csv(path1)
     fig1 = px.line(df1, x='date', y='pnl', title='PNL with data1')
 
-    path = "STRG2.csv"
+    path = "./data/STRG2.csv"
     df = pd.read_csv(path)
     fig = px.line(df, x='date', y='pnl', title='PNL with data1')
 
@@ -79,7 +80,6 @@ def plot():
         ], className='row'),
 
     ])
-    
 
 if __name__ == '__main__':
     plot()
