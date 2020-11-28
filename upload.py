@@ -15,7 +15,7 @@ def upload():
     print("Git commit: ")
     print(cp)
 
-    cp = cmd.run("git push -u origin master", check=True, shell=True)
+    cp = cmd.run("git push -u origin master -f", check=True, shell=True)
     print("Git push: ")
     print(cp)
 
