@@ -19,5 +19,6 @@ def upload():
     print("Git push: ")
     print(cp)
 
+
 if __name__ == "__main__":
     upload()

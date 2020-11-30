@@ -24,7 +24,7 @@ Example file: /template/only_dash.py
 
 #### 2. If you want to embed dash to flask, please look at this: 
 Make sure you import those three lines in the file, 
-werkzeug is the middleware we need to use combine dash and flask apps. 
+werkzeug is the middleware we need to combine dash and flask apps. 
 ``` 
 import flask
 from werkzeug.middleware.dispatcher import DispatcherMiddleware

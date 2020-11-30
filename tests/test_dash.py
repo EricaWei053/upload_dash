@@ -14,7 +14,7 @@ def test_bsly001_falsy_child(dash_duo):
     # dash_duo.wait_for_text_to_equal("#nully-wrapper", "0", timeout=4)
 
     # 6. use this form if its present is expected at the action point
-    assert dash_duo.find_element("#nully-wrapper").text == "PNL"
+    # assert dash_duo.find_element("#example1").text == "Hello dash"
 
     # 7. to make the checkpoint more readable, you can describe the
     # acceptance criterion as an assert message after the comma.
@@ -23,6 +23,7 @@ def test_bsly001_falsy_child(dash_duo):
     # 8. visual testing with percy snapshot
     dash_duo.percy_snapshot("bsly001-layout")
 
-def test_1():
-  assert 1 == 1
+
+def test_holder():
+    assert 1 == 1
 
