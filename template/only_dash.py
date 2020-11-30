@@ -85,5 +85,5 @@ def plot():
 
 if __name__ == '__main__':
     plot()
-    app.run_server(debug=True)
+    app.run_server(port=8080, debug=True)
 

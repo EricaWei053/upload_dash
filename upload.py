@@ -1,6 +1,7 @@
 
 import subprocess as cmd
 
+
 def upload():
     cp = cmd.run("git add .", check=True, shell=True)
     print("Git add: ")
