@@ -25,4 +25,4 @@ def process(fn):
 
 
 if __name__ == "__main__":
-    process('template.dash_only')
+    process('template.dash_only.py')
