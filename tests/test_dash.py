@@ -1,9 +1,20 @@
+"""
+test_dash.py
+To test if the dash file runs without error.
+"""
 
 from dash.testing.application_runners import import_app
+import os,sys,inspect
 
-def test_bsly001_falsy_child(dash_duo):
-    # 3. define your app inside the test function
-    app = import_app("template.only_dash")
+currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+parentdir = os.path.dirname(currentdir)
+sys.path.insert(0, parentdir)
+
+
+def test_bsly001_falsy_child(dash_duo, params):
+    # get app name and define  app inside the test function
+    print("test : ", params['app_name'])
+    app = import_app(params['app_name'])
 
     # 4. host the app locally in a thread, all dash server configs could be
     # passed after the first app argument
