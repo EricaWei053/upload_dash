@@ -15,8 +15,7 @@ def process(fn):
         cp = cmd.run("git add .", check=True, shell=True)
         print("Git add: ")
         print(cp)
-        message = "update the repository"
-        cp = cmd.run(f"git commit -m '{message}'", check=True, shell=True)
+        cp = cmd.run(f"git commit -m update user file", check=True, shell=True)
         print("Git commit: ")
         print(cp)
 
@@ -30,5 +29,40 @@ def process(fn):
         # return False
 
 
+def update_proc(github):
+
+    user_id = 0
+    signal_id = 2
+    try:
+        cp = cmd.run(f"wget {github}", check=True, shell=True)
+        print(cp)
+    except:
+        print("Download file failed.")
+
+    user_fn = github.split('/')[-1]
+    print(user_fn)
+    try:
+        cp = cmd.run(f"mv {user_fn} user{user_id}_signal{signal_id}.html", check=True, shell=True)
+        print(cp)
+    except:
+        print("Change filename failed.")
+
+    try:
+        cp = cmd.run("git add .", check=True, shell=True)
+        print("Git add: ")
+        print(cp)
+        cp = cmd.run(f"git commit -m 'update user file'", check=True, shell=True)
+        print("Git commit: ")
+        print(cp)
+
+        cp = cmd.run("git push -u origin main -f", check=True, shell=True)
+        print("Git push: ")
+        print(cp)
+
+    except:
+        print("Didn't upload to github. ")
+        # return False
+
 if __name__ == "__main__":
-    process("template.only_dash")
+    update_proc("https://github.com/weiluntsai0116/dashboard.github.io/blob/main/user0_signal0.html")
+    #process("template.only_dash")
