@@ -34,11 +34,12 @@ def update_proc(github):
     user_id = 0
     signal_id = 2
     try:
-        cp = cmd.run(f"wget {github}", check=True, shell=True)
+        cp = cmd.run(f"wget -0 user{user_id}_signal{signal_id}.html {github}", check=True, shell=True)
         print(cp)
     except:
         print("Download file failed.")
 
+    ''' 
     user_fn = github.split('/')[-1]
     print(user_fn)
     try:
@@ -46,7 +47,7 @@ def update_proc(github):
         print(cp)
     except:
         print("Change filename failed.")
-
+    '''
     try:
         cp = cmd.run("git add .", check=True, shell=True)
         print("Git add: ")
