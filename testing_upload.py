@@ -65,5 +65,17 @@ def update_proc(github):
         # return False
 
 if __name__ == "__main__":
-    update_proc("https://github.com/weiluntsai0116/dashboard.github.io/blob/main/user1_signal0.html")
-    #process("template.only_dash")
+    link = "https://github.com/weiluntsai0116/dashboard.github.io/blob/main/user1_signal0.html"
+
+    lists = link.split('/')
+    github_idx = lists.index("github.com")
+    print(github_idx)
+    raw_lists = lists[github_idx+1:]
+    raw_lists.remove('blob')
+
+    raw_lists.insert(0, "https://raw.githubusercontent.com")
+    print(raw_lists)
+    raw_link = "/".join(raw_lists)
+    print(raw_link)
+    update_proc(raw_link)
+    # process("template.only_dash")
