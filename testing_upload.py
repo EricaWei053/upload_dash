@@ -31,7 +31,7 @@ def process(fn):
 
 def update_proc(github):
 
-    user_id = 0
+    user_id = 10
     signal_id = 2
     try:
         cp = cmd.run(f"wget -O user{user_id}_signal{signal_id}.html {github}", check=True, shell=True)
