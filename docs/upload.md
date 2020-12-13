@@ -34,7 +34,7 @@ git commit -m "Upload my dash code."
 ```
 
 Step 5:
-Push back the repository, 
+Send a PR to the repository, 
 ```
-git push origin master upload-file
+git push origin main upload-file
 ``` 

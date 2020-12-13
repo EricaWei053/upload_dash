@@ -38,11 +38,11 @@ app_embeds = DispatcherMiddleware(app, {
 
 def get_plot():
 
-    path1 = "./STRG1.csv"
+    path1 = "./data/STRG1.csv"
     df1 = pd.read_csv(path1)
     fig1 = px.line(df1, x='date', y='pnl', title='PNL with data1')
 
-    path2 = "STRG2.csv"
+    path2 = "./data/STRG2.csv"
     df = pd.read_csv(path2)
     fig = px.line(df, x='date', y='pnl', title='PNL with data1')
 

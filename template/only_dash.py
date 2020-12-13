@@ -16,11 +16,11 @@ app.layout = html.Div()
 def plot():
     path1 = "./data/STRG1.csv"
     df1 = pd.read_csv(path1)
-    fig1 = px.line(df1, x='date', y='pnl', title='PNL with data1')
+    fig1 = px.line(df1, x='date', y='pnl', title='plot with data1')
 
     path = "./data/STRG2.csv"
     df = pd.read_csv(path)
-    fig = px.line(df, x='date', y='pnl', title='PNL with data1')
+    fig = px.line(df, x='date', y='pnl', title='plot with data1')
 
     fig.update_xaxes(
         rangeslider_visible=True,
@@ -51,11 +51,12 @@ def plot():
     app.layout = html.Div(children=[
         # All elements from the top of the page
         html.Div([
+
             html.Div([
-                html.H1(children='Hello Dash'),
+                html.H1(id='example1', children='Hello Dash'),
 
                 html.Div(children='''
-                    PnL for data1
+                    plot for data1
                 '''),
 
                 dcc.Graph(
@@ -69,7 +70,7 @@ def plot():
                 html.H1(children='Hello Dash'),
 
                 html.Div(children='''
-                    PnL for data2 
+                    plot for data2 
                 '''),
 
                 dcc.Graph(
@@ -77,11 +78,12 @@ def plot():
                     figure=fig1
                 ),
             ], className='six columns'),
-        ], className='row'),
+        ]),
 
     ])
 
+
 if __name__ == '__main__':
     plot()
-    app.run_server(debug=True)
+    app.run_server(port=8080, debug=True)
 

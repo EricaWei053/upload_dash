@@ -1,6 +1,7 @@
 
 import subprocess as cmd
 
+
 def upload():
     cp = cmd.run("git add .", check=True, shell=True)
     print("Git add: ")
@@ -18,6 +19,7 @@ def upload():
     cp = cmd.run("git push -u origin main -f", check=True, shell=True)
     print("Git push: ")
     print(cp)
+
 
 if __name__ == "__main__":
     upload()
