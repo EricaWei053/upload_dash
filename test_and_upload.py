@@ -45,7 +45,7 @@ def test_and_upload_for_create(create_n_clicks, user_id, signal_id, signal_descr
         print("Git commit: ")
         print(cp)
 
-        cp = cmd.run("git push -u origin main -f", check=True, shell=True)
+        cp = cmd.run("git push origin main", check=True, shell=True)
         print("Git push: ")
         print(cp)
         # db_access.insert_signal(user_id, signal_id, signal_description)
@@ -94,5 +94,5 @@ def test_and_upload_for_modify(modify_n_clicks, user_id, signal_id, signal_descr
 '''
 
 
-test_and_upload_for_create(1, 0, 1, "test", "https://github.com/weiluntsai0116/"
+test_and_upload_for_create(1, 2, 1, "test", "https://github.com/weiluntsai0116/"
                                             "dashboard.github.io/blob/main/user1_signal1.html")
