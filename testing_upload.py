@@ -1,5 +1,6 @@
 import subprocess as cmd
 
+print(":") 
 
 def process(fn):
 
